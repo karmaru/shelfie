@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Form from './Components/Form/Form';
+import Header from './Components/Header/Header';
+import axios from 'axios';
 
-function App() {
+export default class App extends Component {
+  constructor() {
+
+    super()
+    this.state = {
+      product: []
+    }
+  }
+
+componentDidMount() {
+  axios.get('/api/inventory').then(res => {
+    // console.log(1111, res.data);
+    this.setState({
+      product: res.data
+    });
+    // console.log(454545, this.state.product)
+  });
+  }
+
+
+render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header style = {{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    alignContent: 'space-between'
+                    }}/>
+        <div style = {{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    flexWrap: 'nowrap',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    alignContent: 'space-between'
+                    }}>
+
+                            <div>
+                                <Dashboard 
+                                componentDidmount = {this.componentDidMount} product = {this.state.product}/>
+                            </div>
+                   
+        <Form />
+          </div>  
+      
+      
     </div>
   );
 }
-
-export default App;
+}
