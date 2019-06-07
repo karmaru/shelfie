@@ -19,7 +19,7 @@ export default class Form extends Component {
     this.setState({
       [name]: value
     })
-    // console.log(this.state)
+    console.log(this.state)
   }
 
   handleClickReset = () => {
@@ -30,14 +30,14 @@ export default class Form extends Component {
     })
   }
 
-  // postForm = () => {
-  //   const { input } = this.state;
-  //   axios.post('/api/product', { product: input }).then(res => {
-  //     console.log(5555)
-  //     this.props.componentDidMount()
-  //     this.handleClickReset()
-  //     });
-  // }
+  postForm = () => {
+    const { imgUrl, productName, price } = this.state;
+    axios.post('/api/product', {productName, price, imgUrl}).then(res => {
+      console.log(5555)
+      this.props.componentDidMount()
+      this.handleClickReset()
+      });
+  }
 
       render() {     
         return (

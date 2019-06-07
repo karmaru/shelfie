@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
       render() {   
         let {product} = this.props  
         return (
-            <div style = {{border: '1px solid red', width: '40vw'}}>
+            <div >
 
                 {this.props.product.map(product => {
                         return (

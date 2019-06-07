@@ -28,6 +28,7 @@ componentDidMount() {
 render() {
   return (
     <div className="App">
+      <div>
         <Header style = {{
                     display: 'flex',
                     flexDirection: 'row',
@@ -36,22 +37,19 @@ render() {
                     alignItems: 'center',
                     alignContent: 'space-between'
                     }}/>
-        <div style = {{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    flexWrap: 'nowrap',
-                    justifyContent: 'space-around',
-                    alignItems: 'center',
-                    alignContent: 'space-between'
-                    }}>
-
-                            <div>
+      </div>
+                            <div style = {{
+                              display: 'flex',
+                              flexDirection: 'row',
+                              flexWrap: 'nowrap',
+                              justifyContent: 'space-around',
+                              alignItems: 'center',
+                              alignContent: 'space-between'
+                              }}>
                                 <Dashboard 
                                 componentDidmount = {this.componentDidMount} product = {this.state.product}/>
+                                <Form/>
                             </div>
-                   
-        <Form />
-          </div>  
       
       
     </div>

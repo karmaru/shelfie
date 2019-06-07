@@ -10,6 +10,7 @@ module.exports = {
         console.log(req.body)
         let db = req.app.get('db')
         db.create_product(req.body).then((response) => {
+            console.log(77777,response)
             res.send(response)
         } )
     }

@@ -15,15 +15,15 @@ export default class Product extends Component {
         let {name, price, image} = this.props.product  
         console.log(name, price, image)
         return (
-            <div style = {{border: '1px solid green', width: '30vw', height: '40vh'}}>
+            <div style = {{background: '#D34735', borderRadius: '30px',
+            margin: '20px', display: 'flex', alignItems: 'center' }}>
                <div>
                  </div>
                   {name}
                   <div>
-
                 {price}
                   </div>
-                <div style = {{width: '100px', height: "100px"}}>
+                <div >
                 <img src={image} alt="IMAGE" /> 
                 </div>
               </div>
