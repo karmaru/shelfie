@@ -18,6 +18,8 @@ massive(CONNECTION_STRING)
 
 app.get('/api/inventory', ctrl.read)
 app.post('/api/product', ctrl.create);
+app.delete('/api/product/:id', ctrl.delete);
+app.put('/api/product/:id', ctrl.update);
 
 
 

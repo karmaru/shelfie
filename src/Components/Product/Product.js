@@ -16,16 +16,16 @@ export default class Product extends Component {
         console.log(name, price, image)
         return (
             <div style = {{background: '#D34735', borderRadius: '30px',
-            margin: '20px', display: 'flex', alignItems: 'center' }}>
+            margin: '20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div >
+                <img src={image} alt="IMAGE" /> 
+                </div>
                <div>
                  </div>
                   {name}
                   <div>
                 {price}
                   </div>
-                <div >
-                <img src={image} alt="IMAGE" /> 
-                </div>
               </div>
         );
       }
